@@ -1,2 +1,0 @@
-# etti
-proiect 1
