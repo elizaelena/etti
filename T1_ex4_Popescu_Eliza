@@ -1,0 +1,20 @@
+% Vom declara vectorul 'z' avand 21 de elemente
+>>z=[0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0]
+% Pentru punctul a), folosim functia subplot, in care primii 2 parametrii reprezinta dimensiunea vectorului,
+%iar ultimul paramentru reprezinta numarul "miniferestrelor"
+% Continuam cu funtia stem pentru a reprezenta grafic in forma discreta dimensiunile cerute
+>> subplot(1,21,2), stem(0:20,-5:15)
+
+% La punctul b), vom folosi functia abs pentru a calcula modulul, rezultat pe care i-l vom atribui constantei t
+>>t=abs(10-0:20)
+% Vom folosi functia plot pentru reprezentarea grafica a lui t
+>>plot(t)
+
+% Pentru a reprezenta grafic relatia matematica pt n cuprins in intervalul mentionat, vom utiliza o functia for
+>> for n=-15:25 plot(sin((pi/17)*n))
+
+end
+
+% La fel vom proceda si pt punctul urmator
+>> for n=0:50 plot(cos((pi/sqrt(20))*n))
+end
