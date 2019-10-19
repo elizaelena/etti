@@ -1,4 +1,4 @@
 % Vom numi 'a' vectorul alcatuit din elemente aleatoare. Am ales sa fie alcatuit din 100 de elemente
 a=randn(1,100)
-a(a>0)=0
-% Pentru a evidentia elementele negative, am inlocuit cu 0 elementele pozitive din vector
+a=a(<0)
+% Prin ultima comanda am sortat elementele negative ale vectorului 
