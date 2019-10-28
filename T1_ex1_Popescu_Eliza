@@ -1,16 +1,18 @@
-a=[0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
-b=[1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1]
-   % Pentru a putea realiza inmultirea a*b, este necesat ca vectorul b sa aiba acelasi dimensiune ca vectorul a, adica 20 de coloane
-      a*b
-   % Rezultatul reprezinta adunarea elementelor vectorului a
+   % Pentru a putea realiza inmultirea a*b, este necesat ca vectorul b sa aiba acelasi dimensiune ca vectorul a, adica sa fie
+   % vector coloana cu 21 de 1
 
-   % Acum vom realiza inmultirea b*a
+a=0:0.1:2
+c=ones(1,21) %creez un vector linie cu 21 de 1
+b=c';   %transpusul lui c devine b si astfel am obtinut vectorul coloana cu 21 de 1
+
+   % b) Acum vom realiza inmultirea b*a
    b*a
-   % Rezultatul apare sub forma de matrice
+ 
    
-   % Acum realizam inmultirea element cu element
+   % c) Acum realizam inmultirea element cu element
    a.*b
-   % Vom obtine eroare, deoarece operatia este invalida daca vectorii nu sunt de acelasi tip
-  
-
-  
+   %Vom obtine eroare, deoarece operatia este invalida daca vectorii nu sunt de acelasi tip.  Pentru ca inmultirea
+   %element cu element sa aiba sens trebuie sa se inmulteasca 2
+   %vectori linie sau 2 vectori coloana
+ 
+ 
