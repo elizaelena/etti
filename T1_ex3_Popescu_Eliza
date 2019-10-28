@@ -1,15 +1,10 @@
 % Am ales ca lungimea vectorului 'a' sa fie de 10 elemente 
-a=rand(1,10)+i*rand(1,10)
+a=rand(1,10)+j*rand(1,10)
 % Astfel a rezultat un vector 1x10 format din elemente complexe
-% Vom construi acum functia
-function [medie,patrat,inmtranspus ] = toate( a )
-% Primul parametru de iesire (mean) reprezinta media aritmetica a partilor reale ale vectorului
-medie=mean(real(a))
-% Al doilea parametru de iesire (patrat) reprezinta un vector ce contine elementele vectorului initial ridicate la patrat
-patrat=a.^2
-% Ultimul parametru de iesire (inmtranspus) reprezinta inmultirea vectorului initial cu transpusul sau
-inmtranspus=a*a'
-
-end;
 
 
+function [medie , patrat ,inmultire]= fct(c)  % sintaxa functiei
+lungime = length (a)
+medie = real(sum(a)) / lungime                  % media
+patrat = a.^2                                   % vectorul ridicat la patrat
+inmultire = a * a.'                             % matrice formata prin inmultirea vectorului cu transpusul
