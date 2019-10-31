@@ -1,10 +1,10 @@
 %Se va genera un semnal cu rezolutie temporara de 2ms, 20ms
 %200ms pentru un semnal continuu de tipul:
 %1. Semnal dreptunghiular periodic cu
-%? Perioada: 2 s.
-%? Factor de umplere: 25%.
-%? Nivel maxim: +0.5.
-%? Nivel minim: -1.
+% Perioada: 2 s.
+% Factor de umplere: 25%.
+% Nivel maxim: +0.5.
+% Nivel minim: -1.
 
 %Rezolutie temporara de 2 ms
 t=-2:0.002:5;%intervalul de timp de la -2 secunde la 5 secunde( pentru a 
