@@ -1,8 +1,8 @@
 %Se va genera un semnal cu rezolutie temporara de 2ms, 20ms
 %200ms pentru un semnal continuu de tipul:
 %4. Semnal sinusoidal redresat mono alternan??
-%? Perioada semnalului sinusoidal initial (neredresat) 3 s.
-%? Amplitudine: 0.8.
+% Perioada semnalului sinusoidal initial (neredresat) 3 s.
+% Amplitudine: 0.8.
 
 %rezolutie temporara de 200 ms
 t=0:0.002:4;
