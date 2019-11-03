@@ -1,9 +1,10 @@
 % Vom numi 'a' vectorul alcatuit din elemente aleatoare. Am ales sa fie alcatuit din 100 de elemente
-a=randn(1,100)% matrice 1 linie 100 coloane (un vector linie) cu elemente
+a=randn(1,100); % matrice 1 linie 100 coloane (un vector linie) cu elemente
 %aleatoare cu distributie normala (gaussiana).
 
-for i=1:1:10  % aici avem o bucla for 
-    if(v(i)<0) %conditie pentru a sorta numerele negative
-        a=v(i) %se afiseaza nr negative pe rand
+for i=1:1:100  % aici avem o bucla for 
+    if(a(i)<0) %conditie pentru a sorta numerele negative
+        b=a(i) %se afiseaza nr negative pe rand
     end
 end
+
