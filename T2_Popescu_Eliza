@@ -1,0 +1,60 @@
+
+	P=40; %perioada
+	D=22; %numarul din lista cu studenti ;
+	N=50; %numarul de coeficienti Fourier
+	f=1/P; %frecventa semnalului
+	w0=2*pi*f; %frecventa normata
+	rez=10*f; %rezolutia semnalului - trebuie sa fie minim 2*f pentru a respecta conditia Nyquist
+	inter1=D/rez;%cate esantioane sunt pe frontul descrescator/crescator al semnalului
+	s1=[linspace(1,0,inter1),linspace(0,1,P/rez-inter1)]; %o perioada din semnalul triunghiular
+	%linspace genereaza un vector de esantioane egal departate, intre un anumit
+	%interval
+	t=0:rez:P; %timpul echivalent petru o perioada
+	perioada=P/rez;%cate esantioane avem intr-o perioada
+	stem(s1)
+	title('O perioada din semnalul triunghiular')
+	xlabel('Timp [s]')
+	ylabel('Amplitudine')
+	
+
+	semnal=repmat(s1,1,3);%repetam semnalul initial de 3 ori
+	figure
+	plot(semnal)
+	title('3 perioade din semnal')
+	xlabel('Timp [s]')
+	ylabel('Amplitudine')
+	
+
+	%calculam coeficientii Xk corespunzatori seriei Fourier Complexe
+	xk=zeros(1,2*N+1);
+	for m=-N:1:N
+	    for l=1:1:perioada
+	    xk(m+N+1)= xk(m+N+1)+semnal(l)*exp(-1i*m*w0*t(l));
+	    end
+	end
+	figure
+	stem((-N:N),abs(xk))
+	title('Spectrul semnalului') % 
+	s_reconstruit=zeros(1,perioada); %initializam semnalul ce va fi reconstruit
+	for l=1:1:perioada
+	    for m=-N:1:N
+	        s_reconstruit(l)= s_reconstruit(l)+xk(m+N+1)*exp(1i*m*w0*t(l)); %1i= sqrt(-1)
+	    end
+	end
+	s_reconstruit=s_reconstruit/perioada;% normam semnalul reconstruit pentru a avea o amplitudine similara cu cel initial
+	figure
+	plot(s1,'color','m')
+	hold on
+	plot(real(s_reconstruit),'--','color','g')
+	title('Semnalul initial cu magenta, semnalul reconstruit cu verde punctat')
+	%pentru N<10 se vede mai bine diferenta intre semnalul initial si cel
+	%reconstruit
+	
+
+	%Explicatii:
+	%Semnalul reconstruit pe baza formulei, folosind acei N coeficienti
+	%calculati, reprezinta , cum observam si in formula, o suma de sinusi, si daca
+	%marim numarul de coeficienti N, aproiem si semnalul recunstruit de forma
+	%sa ideala (triunghi) , iar daca micsoram numarulde coef.
+	%N, putem observa pe figura sinusii , adica cum e reconstruit semnnalul
+	%ca atare.
